@@ -1,6 +1,13 @@
-class Empwage {
-   public static void main(String[] args){
+public class empWage {
+	public static void main(String[] args){
    System.out.println("Employee Wage Computation Problem");
+	reFactorUC7 obj = new reFactorUC7();
+	obj.EmpWageCalculateMethod();
+	}
+}
+
+class reFactorUC7 {
+	void EmpWageCalculateMethod() {
       final int fullTime = 1;
       final int partTime=0;
       final int empRate=20;
@@ -9,9 +16,9 @@ class Empwage {
       int empHrs;
       int empWage=0;
 		int totalWage=0;
-		while(totalDays<20 && totalHours<100) {
-		int empCheck = (int) Math.floor(Math.random() * 10) % 2;
-      switch (empCheck)
+			while(totalDays<20 && totalHours<100) {
+			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (empCheck)
 			{
         case fullTime:
           	System.out.println("Full time Employee");
