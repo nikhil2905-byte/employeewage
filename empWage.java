@@ -6,7 +6,8 @@ class Empwage {
       final int wagePerHour=20;
       int empCheck = (int) Math.floor(Math.random() * 10) % 3;
       int empHrs=0;
-      int salaryPerDay=0;
+      int salaryPerMonth=0;
+		int totalWorkingDays=20;
       switch (empCheck)
 			{
         case fullTime:
@@ -21,9 +22,8 @@ class Empwage {
           System.out.println("Employee is Absent");
           empHrs=0;
          }
-         salaryPerDay = (empHrs*wagePerHour);
-         System.out.println(salaryPerDay);
-
+         salaryPerMonth = (empHrs*wagePerHour*totalWorkingDays);
+         System.out.println("Employee Salary "  +salaryPerMonth);
       }
 }
 
