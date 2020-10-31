@@ -1,21 +1,22 @@
 public class empWage {
    public static void main(String[] args) {
-      empWageFormMultipleCompanies google = new empWageFormMultipleCompanies("Google" , 100 , 20 , 100);
-      empWageFormMultipleCompanies microsoft = new empWageFormMultipleCompanies("MicroSoft" , 100 , 20 , 100);
-      System.out.println("Total Empwage for " + google.companyName + ":" + google.calculateTotalEmpWage());
-      System.out.println("Total Empwage for " + microsoft.companyName + ":" + microsoft.calculateTotalEmpWage());
-   }
+      saveTotalWage google = new saveTotalWage("Google" , 100 , 20 , 100);
+      saveTotalWage microsoft = new saveTotalWage("MicroSoft" , 100 , 20 , 100);
+      System.out.println(google.calculateTotalEmpWage());
+      System.out.println(microsoft.calculateTotalEmpWage());
+}
 }
 
-class empWageFormMultipleCompanies {
+class saveTotalWage{
 	final int fullTime = 1;
    final int partTime=0;
 	final String companyName;
 	final int empRatePerHour;
 	final int workingDays;
 	final int maxHoursPerMonth;
+	int totalEmpWge;
 
-	public empWageFormMultipleCompanies(String companyName,int empRatePerHour,int workingDays,int maxHoursPerMonth) {
+	public saveTotalWage(String companyName,int empRatePerHour,int workingDays,int maxHoursPerMonth) {
 		this.companyName=companyName;
 		this.empRatePerHour=empRatePerHour;
 		this.workingDays=workingDays;
@@ -45,7 +46,11 @@ class empWageFormMultipleCompanies {
          	totalHours += empHrs;
 			System.out.println("Day :" +totalDays+ " " +"Emphours:" +empHrs);
 		}
-		return totalHours * empRatePerHour;
+		totalEmpWge=totalHours * empRatePerHour;
+		return totalEmpWge;
 		}
+           public String toString(){
+		return "Total Empwage for company " +companyName+":"+totalEmpWge;
+	}
 }
 
